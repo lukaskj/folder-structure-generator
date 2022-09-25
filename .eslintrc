@@ -1,0 +1,51 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "sonarjs", "filenames"],
+  "settings": {},
+  "globals": {},
+  "rules": {
+    "eqeqeq": "error",
+    "no-var": "error",
+    "arrow-body-style": "error",
+    "curly": "error",
+    "complexity": ["error", { "max": 6 }],
+    "sonarjs/cognitive-complexity": ["error", 6],
+    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-explicit-any": ["error"],
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "max-lines-per-function": [
+      "error",
+      { "max": 100, "skipBlankLines": true, "skipComments": true }
+    ],
+    "require-atomic-updates": 1,
+    "filenames/match-regex": ["error", "^[a-zA-Z-]+(.test|.spec|.mock|.config)?$"],
+    "filenames/match-exported": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.test.ts", "*.spec.ts"],
+      "rules": {
+        "max-lines-per-function": [
+          "error",
+          { "max": 200, "skipBlankLines": true, "skipComments": true }
+        ]
+      }
+    }
+  ]
+}
