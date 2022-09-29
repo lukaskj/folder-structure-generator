@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "lukaskj",
-  "license": "MIT",
+  "license": "ISC",
   "engines": {
     "node": "16.17.1",
     "npm": "8.15.0"
