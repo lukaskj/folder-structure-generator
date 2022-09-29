@@ -1,0 +1,15 @@
+{
+  "default2": {
+    "application": [
+      "tests"
+    ],
+    "folder1": [],
+    "folder2": {
+      "subfolder1": [
+        "domain",
+        "database"
+      ],
+      "subfolder2": []
+    }
+  }
+}
