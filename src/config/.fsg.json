@@ -1,0 +1,20 @@
+{
+  "default": {
+    "application": [],
+    "domain": [
+      "entities",
+      "services"
+    ],
+    "infrastructure": {
+      "database": [
+        "migrations",
+        "models",
+        "repositories"
+      ]
+    },
+    "interface": [
+      "controllers",
+      "middleware"
+    ]
+  }
+}
