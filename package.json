@@ -1,16 +1,28 @@
 {
   "name": "@lukaskj/folder-structure-generator",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "lukaskj",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Lukas Jacomin",
   "license": "ISC",
   "engines": {
-    "node": "16.17.1",
-    "npm": "8.15.0"
+    "node": ">=16"
   },
+  "bin": {
+    "folder-structure-generator": "dist/index.js",
+    "fsg": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukaskj/folder-structure-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lukaskj/folder-structure-generator/issues"
+  },
+  "homepage": "https://github.com/lukaskj/folder-structure-generator#readme",
   "scripts": {
-    "clean": "rimraf dist coverage .rollup.cache",
-    "prebuild": "rimraf dist && npm run lint",
+    "clean": "rimraf dist .rollup.cache coverage",
+    "prebuild": "npm run clean && npm run lint",
     "build": "rollup -c rollup.config.js && cp -r ./src/config dist/",
     "start": "npm run build && node dist/index.js",
     "start:dev": "ts-node ./src/index.ts",
@@ -19,7 +31,12 @@
     "test": "jest --config ./jest.config.js --runInBand",
     "test:watch": "jest --watch --config ./jest.config.js",
     "test:cov": "jest --coverage --config ./jest.config.js",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand  --config ./jest.config.js"
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand  --config ./jest.config.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",
@@ -48,5 +65,10 @@
   },
   "dependencies": {
     "yargs": "^17.5.1"
-  }
+  },
+  "files": [
+    "dist/**/*",
+    "!**/test/**",
+    "!node_modules"
+  ]
 }

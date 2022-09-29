@@ -1,5 +1,8 @@
 {
   "default": {
+    "New folder": []
+  },
+  "ddd": {
     "application": [],
     "domain": [
       "entities",

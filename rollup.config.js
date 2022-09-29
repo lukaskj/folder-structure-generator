@@ -9,6 +9,7 @@ export default {
     dir: "dist",
     format: "cjs",
     sourcemap: true,
+    banner: "#!/usr/bin/env node",
   },
   plugins: [json(), commonjs(), typescript({ module: "ESNext", tsconfig: "tsconfig.build.json" }), resolve()],
 };
