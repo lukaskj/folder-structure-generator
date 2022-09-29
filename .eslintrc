@@ -34,7 +34,7 @@
       { "max": 100, "skipBlankLines": true, "skipComments": true }
     ],
     "require-atomic-updates": 1,
-    "filenames/match-regex": ["error", "^[a-zA-Z-]+(.test|.spec|.mock|.config)?$"],
+    "filenames/match-regex": ["error", "^[a-zA-Z-]+(.test|.spec|.mock|.fixture|.config)?$"],
     "filenames/match-exported": "error"
   },
   "overrides": [

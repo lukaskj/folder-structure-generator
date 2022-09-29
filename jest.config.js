@@ -25,6 +25,7 @@ module.exports = {
       statements: 80,
     },
   },
+  coveragePathIgnorePatterns: ["src/index.ts"],
   testPathIgnorePatterns: ["/node_modules/", "<rootDir>/test/.*/fixtures/"],
   watchPathIgnorePatterns: ["coverage"],
 };

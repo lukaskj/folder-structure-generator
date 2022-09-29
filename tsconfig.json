@@ -23,7 +23,8 @@
     "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "strictPropertyInitialization": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "test", "dist", "**/*.spec.*", "**/*.test.*", "**/__mocks__/*", "**/__tests__/*"]
+  "include": ["src", "test"],
+  "exclude": ["node_modules", "dist"]
 }

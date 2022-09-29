@@ -10,5 +10,5 @@ export default {
     format: "cjs",
     sourcemap: true,
   },
-  plugins: [json(), commonjs(), typescript({ module: "ESNext" }), resolve()],
+  plugins: [json(), commonjs(), typescript({ module: "ESNext", tsconfig: "tsconfig.build.json" }), resolve()],
 };
